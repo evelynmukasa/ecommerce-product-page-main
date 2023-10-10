@@ -374,7 +374,7 @@ header nav .cartAvatarDiv{
     align-items: center;
 }
 header nav .cartAvatarDiv .avatar{
-    width: 60px;
+    width: 50px;
     aspect-ratio: 1;
 }
 header nav .cartAvatarDiv .cartIcon{
