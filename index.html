@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class=" ">
+    <nav>
+      <a href="" class="menuToggle"><img src="images/icon-menu.svg" alt=""></a>
+      <a href="" class="logo"><img src="images/logo.svg" alt=""></a>
+      <div class="listDiv d-sm-none">
+        <ul class="">
+          <a href="" class="menuClose"><img src="images/icon-close.svg" alt=""></a>
+          <li><a href="">Collections</a></li>
+          <li><a href="">Men</a></li>
+          <li><a href="">Women</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+      <div class="cartAvatarDiv">
+        <div class="cartIcon">
+          <a href=""><img src="images/icon-cart.svg" alt=""></a>
+        </div>
+        <div class="avatar">
+           <a href=""></a><img src="images/image-avatar.png" alt="">
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="hero heroBanner">
+      <div class="heroImg">
+        <div class="bigImg" id="bigImgHero">
+          <img src="images/image-product-1.jpg" alt="" class="img">
+        </div>
+        <div class="smallImgs">
+          <div class="smallImg imgActive"><img src="images/image-product-1.jpg" alt="" class="img "></div>
+          <div class="smallImg"><img src="images/image-product-2.jpg" alt="" class="img "></div>
+          <div class=" smallImg"><img src="images/image-product-3.jpg" alt="" class="img"></div>
+          <div class="smallImg "><img src="images/image-product-4.jpg" alt="" class="img"></div>
+        </div>
+      </div>
+      <div class="arrowsDiv">
+        <button class="btn-previous"><img src="images/icon-previous.svg" alt=""></button>
+        <button class="btn-next"><img src="images/icon-next.svg" alt=""></button>
+      </div>
+    </div>
+    <div class="description">
+      <h6>Sneaker Company</h6>
+      <h2>Fall Limited Edition Sneakers</h2>
+      <p>
+        These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they’ll withstand everything the weather can offer.
+      </p>
+      <div class="pricingDiv">
+        <h2> <span class="price">$125.00</span><span class="discount">50%</span></h2>
+        <span class="oldPrice">$250.00</span>
+      </div>
+      <div class="CTA">
+        <div class="count">
+          <button class="btn-minus" id="btn-minus"><img src="images/icon-minus.svg" alt=""></button>
+          <span class="countNumber" id="countNumber">0</span>
+          <button class="btn-plus" id="btn-plus"><img src="images/icon-plus.svg" alt=""></button>
+        </div>
+        <button class="addToCart" id="addToCart"><img src="images/icon-cart-white.svg" alt="">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.frontendmentor.io/profile/@evelynmukasa">Eva Mukasa</a>.
+    </div>
+  </footer>
+  <div class="lightBox d-none">
+    <button class="close" id="closeLightBox"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/></svg></button>
+      <div class="hero">
+        <div class="heroImg">
+          <div class="bigImg" id="bigImgLightBox">
+            <img src="images/image-product-1.jpg" alt="" class="img">
+          </div>
+          <div class="smallImgs">
+            <div class=" smallImg imgActive"><img src="images/image-product-1.jpg" alt="" class="img "></div>
+            <div class="smallImg"><img src="images/image-product-2.jpg" alt="" class="img "></div>
+            <div class="smallImg"><img src="images/image-product-3.jpg" alt="" class="img"></div>
+            <div class="smallImg "><img src="images/image-product-4.jpg" alt="" class="img"></div>
+          </div>
+        </div>
+        <div class="arrowsDiv">
+          <button class="btn-previous"><img src="images/icon-previous.svg" alt=""></button>
+          <button class="btn-next"><img src="images/icon-next.svg" alt=""></button>
+        </div>
+    </div>
+  </div>
+  <div class="cart d-none">
+    <div class="cartTitle">
+      <h4>Cart</h4>
+    </div>
+    <div class="cartContent">
+      <ul class="cartItems">
+        <!-- <li class="cartItem">
+          <img src="images/image-product-2-thumbnail.jpg" alt="" class="cartItmImg">
+          <div class="description">
+            <p>Fall Limited 
+              Edition Sneakers
+            </p>
+            <p>
+              $125.00 x3 <span>$375.00</span>
+            </p>
+          </div>
+          <button><img src="images/icon-delete.svg" alt=""></button>
+        </li> -->
+      </ul>
+      <button class="btnCheckout">Checkout</button>
+    </div>
+  </div>
+</body>
+<script >
+  const menuToggle = document.querySelector('.menuToggle');
+  menuToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    const listDiv = document.querySelector('.listDiv');
+    listDiv.classList.remove('d-sm-none');
+  });
+  const menuClose = document.querySelector('.menuClose');
+  menuClose.addEventListener('click', (e) => {
+    e.preventDefault();
+    const listDiv = document.querySelector('.listDiv');
+    listDiv.classList.add('d-sm-none');
+  });
+  const cartIcon = document.querySelector('.cartIcon');
+  cartIcon.addEventListener('click', (e) => {
+    e.preventDefault();
+    const cart = document.querySelector('.cart');
+    cart.classList.toggle('d-none');
+  });
+
+
+  function changeImge(bigImg,smallImg,container){
+        const activeImg=container.querySelector('.imgActive');
+        activeImg.classList.remove('imgActive');
+        const img = smallImg.querySelector('.img');
+        const src = img.getAttribute('src');
+        bigImg.innerHTML = `<img src="${src}" alt="" class="img">`;
+        smallImg.classList.add('imgActive');
+  }
+  const hero = document.querySelector('.heroBanner');
+  const smallImgs = hero.querySelectorAll('.smallImg');
+  const bigImg = hero.querySelector('#bigImgHero');
+  // change image in hero
+  smallImgs.forEach(smallImg => {
+    smallImg.addEventListener('click', (e) => {
+      e.preventDefault();
+      changeImge(bigImg,smallImg,hero);
+    });
+  });
+
+  const lightBox = document.querySelector('.lightBox'); 
+  const smallImgsLightBox = lightBox.querySelectorAll('.smallImg');
+  const bigImgLightBox = lightBox.querySelector('#bigImgLightBox');
+
+  // close lightbox
+  const closeLightBox = document.querySelector('#closeLightBox');
+  closeLightBox.addEventListener('click', (e) => {
+    e.preventDefault();
+    lightBox.classList.add('d-none');
+  });
+  // open lightbox
+  bigImg.addEventListener('click', (e) => {
+    e.preventDefault();
+    lightBox.classList.remove('d-none');
+  });
+  // change image in lightbox
+  smallImgsLightBox.forEach(smallImg => {
+    smallImg.addEventListener('click', (e) => {
+      e.preventDefault();
+      changeImge(bigImgLightBox,smallImg,lightBox);
+    });
+  });
+
+  // convert nodelist to array
+  const smallImgsArray = Array.from(smallImgsLightBox);
+  // change image using arrows
+  const btnPrevious = lightBox.querySelector('.btn-previous');
+  btnPrevious.addEventListener('click',(e)=>{
+    // get index of active image
+    let i = smallImgsArray.indexOf(
+    smallImgsArray.find((element) => element.classList.contains('imgActive'))
+    );
+    e.preventDefault;
+    i--
+      if(i<0){
+        i=0;
+      }
+    changeImgArrows(smallImgsLightBox[i],smallImgsLightBox,bigImgLightBox);
+  })
+  // change image using arrows
+  const btnNext = lightBox.querySelector('.btn-next');
+  btnNext.addEventListener('click',(e)=>{
+    let i = smallImgsArray.indexOf(
+    smallImgsArray.find((element) => element.classList.contains('imgActive'))
+    );
+    e.preventDefault;
+    i++
+      if(i>3){
+        i=3;
+      }
+    changeImgArrows(smallImgsLightBox[i],smallImgsLightBox,bigImgLightBox);
+  })
+  // change image using arrows
+  function changeImgArrows(smallImg,smallImgs,bigImg){
+    smallImgs.forEach(smallImg =>{
+      smallImg.classList.remove('imgActive');
+    })
+    const src=smallImg.querySelector('.img').getAttribute('src');
+    smallImg.classList.add('imgActive');
+    bigImg.innerHTML=`<img src="${src}" alt="" class="img">`
+  }
+
+  // update count
+  const btnMinus = document.querySelector('#btn-minus');
+  const btnPlus = document.querySelector('#btn-plus');
+  const countNumber = document.querySelector('#countNumber');
+
+  btnMinus.addEventListener('click',(e)=>{
+    e.preventDefault();
+    let count=parseInt(countNumber.textContent);
+    if(count>0){
+      count--;
+      countNumber.textContent=count;
+    }
+  })
+  btnPlus.addEventListener('click',(e)=>{
+    e.preventDefault();
+    let count=parseInt(countNumber.textContent);
+    count++;
+    countNumber.textContent=count;
+  })
+
+  // add to cart
+  const countOfItems = parseInt(countNumber.textContent);
+  const priceOfItem = parseFloat(document.querySelector('.pricingDiv h2 .price').textContent.replace(/\$/g, ""));
+  //if the item is in the cart
+  const cartItems = document.querySelectorAll('.cartItems li');
+  const cartItemList= document.querySelector('.cartItems');
+  const cartContent = document.querySelector('.cartContent');
+  const btnCheckout = document.querySelector('.btnCheckout');
+  btnCheckout.addEventListener('click',(e)=>{
+    e.preventDefault();
+    cartItemList.innerHTML='';
+    emptyCart();
+  })
+
+  if (cartItems.length===0){
+    emptyCart();
+  }
+  
+  const nameOfItem = document.querySelector('.description h2').textContent;
+
+  const addToCart = document.querySelector('#addToCart');
+  addToCart.addEventListener('click',(e)=>{
+    btnCheckout.classList.remove('d-none');
+    const cartEmpty=document.querySelector('.cartEmpty');
+    if(cartEmpty){
+      cartEmpty.remove();
+    }
+    e.preventDefault();
+    const cartItems = document.querySelector('.cartItems');
+    const cartItem = document.createElement('li');
+    cartItem.classList.add('cartItem');
+
+    const img = document.createElement('img');
+    img.setAttribute('src','images/image-product-2-thumbnail.jpg');
+    img.classList.add('cartItmImg');
+    cartItem.appendChild(img);
+
+    const description = document.createElement('div');
+    description.classList.add('description');
+
+    const p1 = document.createElement('p');
+    p1.textContent='Fall Limited Edition Sneakers';
+
+    const p2 = document.createElement('p');
+
+    p2.textContent=`$ ${priceOfItem.toFixed(2)} x ${countNumber.textContent} `;
+
+    const span = document.createElement('span');
+    let total = priceOfItem*countNumber.textContent;
+    span.textContent=` $${total.toFixed(2)}`;
+    p2.appendChild(span);
+
+    description.appendChild(p1);
+    description.appendChild(p2);
+    cartItem.appendChild(description);
+
+    const button = document.createElement('button');
+    const img2 = document.createElement('img');
+    img2.setAttribute('src','images/icon-delete.svg');
+    button.appendChild(img2);
+    cartItem.appendChild(button);
+    cartItems.appendChild(cartItem);
+
+    button.addEventListener('click',(e)=>{
+      e.preventDefault();
+      cartItem.remove();
+      if(cartItems.children.length===0){
+        emptyCart();
+      }
+    })
+  })
+
+  function emptyCart(){
+    btnCheckout.classList.add('d-none');
+    const cartEmpty=document.createElement('p');
+    cartEmpty.classList.add('cartEmpty');
+    cartEmpty.textContent='Your cart is Empty';
+    cartItemList.appendChild(cartEmpty);
+  }
+
+  const btnNext2 = document.querySelector(' .heroBanner .btn-next');
+  const btnPrevious2 = document.querySelector(' .heroBanner .btn-previous');
+  const smallImgs2 = document.querySelectorAll(' .heroBanner .smallImgs');
+  let i=0;
+
+  btnNext2.addEventListener('click',()=>{
+    i++
+    if(i>3){
+      i=0;
+    }
+    console.log();
+    tranlateX(i);
+  })
+  btnPrevious2.addEventListener('click',()=>{
+    i--
+    if(i<0){
+      i=3;
+    }
+    tranlateX();
+  })
+
+  function tranlateX(){
+    smallImgs2.forEach(smallImg=>{
+      smallImg.style.transform=`translateX(${i*(- 100)}vw)`;
+    })
+  }
+
+
+
+
+
+
+
+   
+
+  
+  
+</script>
+</html>
